@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css"/>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F5F5F5;
+            font-family: 'Inter';
+            justify-content: center;
+            align-items: center;
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+        }
+        .navbar {
+            background-color: #ffffff;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 70px 10px 70px;
+            height: 70px;
+            width: 100%;
+        }
+
+        .navbar a {
+            color: #171717;
+            text-decoration: none;
+            padding: 10px;
+            display: inline-block;
+            font-size:10px;
+        }
+
+        .navbar .logo {
+            margin-right: auto;
+        }
+
+        .navbar .menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .menu a {
+            margin-left: 10px;
+        }
+        .navbar .language {
+            margin-right: 20px;
+        }
+        .navbar .language select {
+            height:15px;
+            width: 30px;
+            background-color: #dedede;
+            border: none;
+            border-radius: 4px;
+            font-size: 8px;
+            color: #000000;
+            padding: 0px 5px;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+        .navbar .language select:focus {
+    outline: none;
+}
+        .navbar .user-image {
+            margin-left:10px;
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+        }
+        .navbar .user-image img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .navbar .welcome-text span {
+             margin-left: 10px;
+              font-size: 14px;
+              color: #00000;
+        }
+
+        .navbar .notification {
+            margin-left: 10px;
+        }
+
+        .navbar .icon {
+            display: none;
+            color: #DE1D2D;
+            cursor: pointer;
+        }
+        .container-fluid{
+
+            max-width: 850px;
+            background-color: #ffffff;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+         }
+         .container-fluid h3{
+             text-align: center;
+            padding-top: 20px;
+            padding-bottom: 10px
+         }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            height: auto;
+            margin:auto;
+            top: 50%;
+        }
+        
+        .left,
+        .right {
+            flex-basis: 100%;
+            max-width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        
+        @media (min-width: 768px) {
+            
+            .left {
+                flex-basis: 50%;
+                max-width: 50%;
+                text-align: left;
+            }
+        
+            .right {
+                flex-basis: 50%;
+                max-width: 50%;
+                text-align: left;
+            }
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+    
+        }
+        .title{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            
+        }
+        .title a{
+            color: #DE1D2D;
+            font-weight: 600;
+            font-size: 12px;
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 30px auto;
+            float: left;
+            background-color: lightgray;
+        }
+        .profile-image img{
+            width: 100%;
+            height: 100%;
+            border-radius:50%;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid lightgray;
+            font-size: 14px;
+        }
+        .form-group select{
+            width: 30%;
+            margin-right: 10px;
+        }
+        #country input{
+            width: 70%;
+        }
+        #country{
+            display: flex;
+            flex-direction: ;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .form-group a {
+            font-size: 12px;
+        }
+        
+        .delivery-box {
+            border: 1px solid #DE1D2D;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        .address {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .para{
+            color:#959595;
+        }
+        .para span a{
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .address a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #1e1e1e;
+            font-size: 12px;
+        }
+        .address span{
+            float: right;
+        }
+        .button {
+            background-color: transparent;
+            width: 100%;
+            border-color: #171717;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            box-shadow: 0  0px10px rgba(0, 0, 0,0.2);
+        }
+        
+        @media (max-width: 767px) {
+            .navbar{
+                padding: 0px 10px 0px 10px;
+            }
+            .navbar a{
+                font-size:16px;
+            }
+            .navbar .menu {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: 100%;
+                background-color: #333;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                z-index: 1;
+            }
+            .navbar .language {
+                display: none;
+            }
+            .navbar .notification {
+                display: ;
+            }
+
+            .navbar a.icon {
+                display: inline-block;
+            }
+
+            .navbar.responsive .menu {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .navbar.responsive a {
+                display: block;
+                text-align: center;
+                margin: 10px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+        
+            .form-group input,
+            .form-group select {
+                font-size: 12px;
+            }
+        
+            .form-group label {
+                font-size: 12px;
+            }
+        
+            .form-group a {
+                font-size: 10px;
+            }
+        
+            .delivery-box {
+                font-size: 12px;
+            }
+        
+            .address a {
+                font-size: 10px;
+            }
+        
+            .button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+        <div class="navbar" id="myNavbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" width="50" height="50">
+        </div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Products</a>
+            <a href="#">Partners</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="language">
+            <select>
+                <option value="EN">EN</option>
+                <option value="FR">FR</option>
+                <option value="SP">SP</option>
+            </select>
+        </div>
+        <div class="user-image">
+            <img src="johndoe.jpg" alt="User" width="30" height="30">
+            
+        </div>
+        
+        <div class="notification">
+            <a href="#">Order</a>
+            <a href="#">
+                <i class="fa fa-bell-o"></i>
+            </a>
+        </div>
+        <a href="#" class="icon" onclick="toggleNavbar()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="container-fluid">
+        <h3>User Profile</h3>
+            <div class="container">
+
+        <div class="left">
+
+            <div class="title">
+                <h2>Basic Information</h2>
+                <a href="#">Edit Profile</a>
+            </div>
+            <div class="profile-image">
+                <img src="johndoe.jpg"/>
+            </div>
+            <div class="form-group">
+                <input type="text" id="name" placeholder="John Doe">
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="example@example.com">
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="********">
+                <a href="#" style="float:right; color:#DE1D2D">Change Password</a>
+            </div>
+            <div class="form-group" id="country">
+                <select id="country-code">
+                    <option value="+1">
+                        <img src="#" alt="/"/>+1</option>
+                    <option value="+91">+91</option>
+                    <option value="+44">+44</option>
+                    
+                </select>
+                <input type="text" id="phone" placeholder="0123456789">
+            </div>
+        </div>
+        <div class="right">
+            <h2>Delivery</h2>
+            <div class="delivery-box">
+                <div class="address">
+                    <a href="#">Home</a>
+                    <span>
+                        <a href="#">Edit</a>
+                        <a href="#">Delete</a>
+                    </span>
+                </div>
+                <div class="para">
+                    Bodija Estate Baptist Church, Adeyi Avenue, Ibadan, Nigeria My Office Addresss
+                    <br>
+                    <span><a>Details</a></span>
+                </div>
+            </div>
+                        <div class="delivery-box">
+
+                <div class="address">
+
+                    <a href="#">Work</a>
+                    <span>
+                        <a href="#">Edit</a>
+                        <a href="#">Delete</a>
+                    </span>
+                </div>
+                <div class="para">
+                    Bodija Estate Baptist Church, Adeyi Avenue, Ibadan, Nigeria My Office Addresss
+                    <br>
+                    <span><a>Details</a></span>
+                </div>
+            </div>
+            <button class="button">+ Add New Address</button>
+        </div>
+    </div>
+    </div>
+    <script>
+        function toggleNavbar() {
+            var navbar = document.getElementById("myNavbar");
+            var userProfile = document.querySelector(".user-image");
+            var notify = document.querySelector(".notification");
+            if (navbar.className === "navbar") {
+                navbar.className += " responsive";
+                userProfile.style.display = "none";
+                notify.style.display= "none";
+            } else {
+                navbar.className = "navbar";
+                userProfile.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
